@@ -4,42 +4,113 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+
+  /* Neutral */
+  --black: #263238;
+  --d_grey: #4d4d4d;
+  --grey: #717171;
+  --l_grey: #89939E;
+  --grey_blue: #ABBED1;
+  --silver: #F5F7FA;
+
+
+  /* Primray */
+  --primary: #28CB8B;
+
+  /* Secondary */
+  --secondary: #263238;
+
+  /* Info */
+  --info: #2194f3;
+
+  /* Action */
+  --warning: #FBC02D;
+  --error: #E53835;
+  --success: #2E7D31;
+
+
+  /* Color Shade */
+  --shade_1: #43A046;
+  --shade_2: #388E3B;
+  --shade_3: #237D31;
+  --shade_4: #1B5E1F;
+  --shade_5: #103E13;
+
+
+  /* Color Tint */
+  --tint_1: #66BB69;
+  --tint_2: #81C784;
+  --tint_3: #A5D6A7;
+  --tint_4: #C8E6C9;
+  --tint_5: #E8F5E9;
+
+  /* Font  */
+  --font-inter: 'Inter', sans-serif; 
 }
 
-@media (prefers-color-scheme: dark) {
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Variable Primary */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-info: var(--info);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-success: var(--success);
+
+  /* Variable neutral */
+  --color-black: var(--black);
+  --color-d_grey: var(--d_grey);
+  --color-grey: var(--grey);
+  --color-l_grey: var(--l_grey);
+  --color-grey_blue: var(--grey_blue);
+  --color-silver: var(--silver);
+
+  /* Variable Shade */
+  --color-shade_1: var(--shade_1);
+  --color-shade_2: var(--shade_2);
+  --color-shade_3: var(--shade_3);
+  --color-shade_4: var(--shade_4);
+  --color-shade_5: var(--shade_5);
+
+  /* Variable Tint */
+  --color-tint_1: var(--tint_1);
+  --color-tint_2: var(--tint_2);
+  --color-tint_3: var(--tint_3);
+  --color-tint_4: var(--tint_4);
+  --color-tint_5: var(--tint_5);
+
+  /* Font */
+  --font-inter: var(--font-inter);
+}
+
+
+/* For darkMode in Chrome */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+/* disabled scrollbar */
+::-webkit-scrollbar {
+  display: none;
 }
 
 html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+body.no-scroll {
+  overflow: hidden;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
