@@ -46,7 +46,9 @@
   --tint_5: #E8F5E9;
 
   /* Font  */
-  --font-inter: 'Inter', sans-serif; 
+  /* --font-inter: 'Inter', sans-serif;  */
+  --font-source-sans: 'Source Sans 3', 'ui-sans-serif', 'system-ui', sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono', 'ui-monospace', 'SFMono-Regular', monospace;
 }
 
 
@@ -85,7 +87,9 @@
   --color-tint_5: var(--tint_5);
 
   /* Font */
-  --font-inter: var(--font-inter);
+  /* --font-inter: var(--font-inter); */
+  --font-source-sans: var(--font-source-sans);
+  --font-jetbrains-mono: var(--font-jetbrains-mono);
 }
 
 
@@ -110,7 +114,7 @@ body.no-scroll {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Inter, sans-serif;
+  font-family: var(--font-source-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -5,8 +5,8 @@ export default async function ProductId( {params} ){
     
     return (
         <>
-            <h1 className="text-3xl font-bold underline text-black">
-                Product Detail Page
+            <h1 className="text-3xl text-black">
+                Home Page for Product {id}
             </h1>
         </>
     )
