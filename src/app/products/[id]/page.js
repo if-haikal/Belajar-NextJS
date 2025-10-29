@@ -16,7 +16,7 @@ export default async function ProductId( {params} ){
             <div className="relative size-72 rounded-full overflow-hidden m-4">
                 <Image
                     src={Kucing}
-                    fill={true}
+                    fill
                     alt={"Product " + id}
                     loading="lazy"
                     className="object-cover"

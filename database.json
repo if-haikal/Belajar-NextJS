@@ -1,0 +1,16 @@
+{
+    "post" : [
+        {
+            "id": 1,
+            "title": "Article 1",
+            "slug": "article-1",
+            "content": "This is the content of the first article."
+        },
+        {
+            "id": 2,
+            "title": "Article 2",
+            "slug": "article-2",
+            "content": "This is the content of the second article."
+        }
+    ]
+}
