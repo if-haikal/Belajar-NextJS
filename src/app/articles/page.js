@@ -2,7 +2,7 @@ import Link from "next/link"
 
 
 async function getArticles() {
-    const res = await fetch('http://localhost:3001/post');
+    const res = await fetch('http://localhost:3001/article');
     const articles = await res.json();
 
     return articles;
@@ -11,7 +11,7 @@ async function getArticles() {
 export default async function ArticlesPage() {
     const articles = await getArticles();
 
-    console.log(articles);
+    // console.log(articles);
 
     return (
         <div>
@@ -19,9 +19,9 @@ export default async function ArticlesPage() {
             
             {articles.map((article) => (
                 <article key={article.id}>
-
-                    <Link key={article.id} href={`/articles/${article.slug}`}> {article.title} </Link>
-
+                    <h2>
+                        <Link href={`/articles/${article.slug}`}> {article.title} </Link>
+                    </h2>
                 </article>
             ))}
         </div>
