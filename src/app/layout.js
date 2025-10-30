@@ -1,5 +1,9 @@
 import "./globals.css";
 import { Source_Sans_3, JetBrains_Mono } from "next/font/google";
+import { Header } from "./header";
+import { Footer } from "./footer";
+
+
 // import localFont from "next/font/local";
 
 const fontSans = Source_Sans_3({
@@ -130,7 +134,13 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={`${fontSans.variable} ${fontMono.variable} font-sans`}>
+        
+        <Header />
+        
         {children}
+
+        <Footer />
+
       </body>
     </html>
   );

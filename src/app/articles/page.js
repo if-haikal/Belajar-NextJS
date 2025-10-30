@@ -14,8 +14,8 @@ export default async function ArticlesPage() {
     // console.log(articles);
 
     return (
-        <div>
-            <h1>Articles Page</h1>
+        <div className="mx-2">
+            <h1 className="font-bold text-2xl">Articles Page</h1>
             
             {articles.map((article) => (
                 <article key={article.id}>

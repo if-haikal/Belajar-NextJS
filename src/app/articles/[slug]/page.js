@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 async function getArticles(slug) {
     const res = await fetch(`http://localhost:3001/article/?slug=${slug}`);
     const [ articles ] = await res.json();
@@ -12,10 +14,15 @@ export default async function ArticlesPage( {params} ) {
     // console.log(articles);
 
     return (
-        <article>
-            <h1>{articles.title}</h1>
-            <p>{articles.content}</p>
-        </article>
+        <div className="mx-2">
+            <Link href="/articles" className="text-blue-500"> &larr; Back to Articles</Link>
+
+            <article className="mt-2">
+                <h1 className="text-xl font-bold">{articles.title}</h1>
+                <p>{articles.content}</p>
+            </article>
+        </div>
+        
     )
     
 }

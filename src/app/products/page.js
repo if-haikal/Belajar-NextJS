@@ -1,9 +1,9 @@
 export default function Products(){
     return (
-        <>
-            <h1 className="text-3xl font-bold underline text-black">
-                Products Page
+        <div className="mx-2">
+            <h1 className="text-3xl font-bold text-black">
+                Change the url to /products/id-prodcut to see dynamic route
             </h1>
-        </>
+        </div>
     )
 }
