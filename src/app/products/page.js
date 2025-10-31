@@ -1,3 +1,8 @@
+export const metadata = {
+    title: 'Product',
+    description: 'View of a Product Page'
+}
+
 export default function Products(){
     return (
         <div className="mx-2">

@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Kucing from "../../../../public/cat.jpg";
 
+export const metadata = {
+    title: 'Product Detail',
+    description: 'Detailed view of a single product'
+}
+
+
 export default async function ProductId( {params} ){
     const {id} = await params;
     console.log("Product ID:", id);
-
     
     return (
         <>

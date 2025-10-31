@@ -1,5 +1,9 @@
 import Link from "next/link"
 
+export const metadata = {
+    title: 'Article',
+    description: 'View of a article page'
+}
 
 async function getArticles() {
     const res = await fetch('http://localhost:3001/article');

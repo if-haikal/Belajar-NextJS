@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getSetting } from "./queries/getSetting";
+import { getSetting } from "./[queries]/getSetting";
 
 export async function Header(){
     const setting = await getSetting();

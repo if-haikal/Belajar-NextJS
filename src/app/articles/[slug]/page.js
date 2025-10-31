@@ -2,12 +2,24 @@ import Link from "next/link";
 import { FormComment } from "./formComment";
 import { LikeButton } from "./likeButton";
 
+// use dynamic metadata when fetch detail products/articles/posts
+export async function generateMetadata( {params} ){
+    const { slug } = await params;
+    const articles = await getArticles(slug);
+
+    return {
+        title: articles.title,
+        description: articles.content.slice(0, 160)
+    }
+}
+
 async function getArticles(slug) {
     const res = await fetch(`http://localhost:3001/article/?slug=${slug}`);
     const [ articles ] = await res.json();
 
     return articles;
 }
+
 
 
 

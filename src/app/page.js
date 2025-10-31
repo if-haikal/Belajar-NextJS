@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+export const metadata = {
+    title: 'Home',
+    description: 'View of a Home Page'
+}
+
 export default function Home() {
   return (
     <div>

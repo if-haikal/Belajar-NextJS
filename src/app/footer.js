@@ -1,4 +1,4 @@
-import { getSetting } from "./queries/getSetting";
+import { getSetting } from "./[queries]/getSetting";
 
 export async function Footer() {
     const setting = await getSetting();
