@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { FormComment } from "./formComment";
 import { LikeButton } from "./likeButton";
+import { Comments } from "./comments";
+import { Suspense } from "react";
 
 // use dynamic metadata when fetch detail products/articles/posts
 export async function generateMetadata( {params} ){
@@ -45,6 +47,11 @@ export default async function ArticlesPage( {params} ) {
             {/* Comment Section */}
             <section className="mt-5">
                 <h2>Comments :</h2>
+
+                <Suspense fallback={<p>Loading comments...</p>}>
+                    <Comments />
+                </Suspense>
+
                 <FormComment />
             </section>
         </div>
