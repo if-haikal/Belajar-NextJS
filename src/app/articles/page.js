@@ -6,6 +6,8 @@ export const metadata = {
 }
 
 async function getArticles() {
+    await new Promise((resolve) => setTimeout(resolve, 3000)); // simulate delay
+    
     const res = await fetch('http://localhost:3001/article');
     const articles = await res.json();
 
