@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FormComment } from "./formComment";
+import { LikeButton } from "./likeButton";
 
 async function getArticles(slug) {
     const res = await fetch(`http://localhost:3001/article/?slug=${slug}`);
@@ -22,6 +23,9 @@ export default async function ArticlesPage( {params} ) {
             <article className="mt-2">
                 <h1 className="text-xl font-bold">{articles.title}</h1>
                 <p>{articles.content}</p>
+
+                <hr className="my-4"/>
+                <LikeButton />
             </article>
 
             {/* Comment Section */}

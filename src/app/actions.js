@@ -8,3 +8,10 @@ export async function addComment(pervData, formData){
         return { error: 'Comment cannot be empty'};
     }
 }
+
+export async function createLike() {
+    // Fake delay
+    await new Promise(resolve => setTimeout(() => resolve(true), 2000));
+
+    console.log("Like created");
+}
