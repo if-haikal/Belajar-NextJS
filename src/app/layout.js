@@ -2,7 +2,7 @@ import "./globals.css";
 import { Source_Sans_3, JetBrains_Mono } from "next/font/google";
 import { Header } from "./header";
 import { Footer } from "./footer";
-
+import { getSetting } from "./[queries]/getSetting";
 
 // import localFont from "next/font/local";
 
@@ -112,12 +112,19 @@ const fontMono = JetBrains_Mono({
 //   ]
 // })
 
-export const metadata = {
-  title: "Nexcent",
-  description: "Landing Page for Nexcent",
-  icons: {
-    icon: "/favicon.ico",
-  }
+export async function generateMetadata() {
+  const setting = await getSetting();
+
+  return {
+    title: {
+      template: `%s | ${setting?.sitename}`,
+      default: "Nexcent",
+    },
+    description: "Landing Page for Nexcent",
+    icons: {
+      icon: "/favicon.ico",
+    }
+  };
 };
 
 export const viewport = {
