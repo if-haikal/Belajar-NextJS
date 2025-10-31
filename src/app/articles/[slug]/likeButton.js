@@ -4,12 +4,12 @@ import { createLike } from "@/app/actions";
 import { useTransition } from "react";
 
 
-export function LikeButton(){
+export function LikeButton({articleId}){
     const [pending, startTransition] = useTransition();
 
     async function handleLike(){
         startTransition(async () => {
-            await createLike();
+            await createLike(articleId);
         });
     }
 

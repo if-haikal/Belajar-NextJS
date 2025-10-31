@@ -9,6 +9,8 @@ async function getArticles(slug) {
     return articles;
 }
 
+
+
 export default async function ArticlesPage( {params} ) {
     const { slug } = await params;
     const articles = await getArticles(slug);
@@ -25,7 +27,7 @@ export default async function ArticlesPage( {params} ) {
                 <p>{articles.content}</p>
 
                 <hr className="my-4"/>
-                <LikeButton />
+                <LikeButton articleId={articles.id}/>
             </article>
 
             {/* Comment Section */}

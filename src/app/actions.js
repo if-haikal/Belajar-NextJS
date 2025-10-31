@@ -9,9 +9,9 @@ export async function addComment(pervData, formData){
     }
 }
 
-export async function createLike() {
+export async function createLike(articleId) {
     // Fake delay
-    await new Promise(resolve => setTimeout(() => resolve(true), 2000));
+    await new Promise(resolve => setTimeout(() => resolve(true), 1000));
 
-    console.log("Like created");
+    console.log("Like created for article ID:", articleId);
 }
