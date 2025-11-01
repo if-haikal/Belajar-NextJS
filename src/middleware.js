@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server'
 
 export function middleware(req){
     const {pathname} = req.nextUrl;
+    const cookies = req.cookies.getAll("token");
+
+    console.log("Cookie token:", cookies);
 
     if (pathname.startsWith("/articles")) {
         console.log("Middleware applied to /articles path");
