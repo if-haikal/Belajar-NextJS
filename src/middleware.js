@@ -1,3 +1,5 @@
+import { NextResponse } from 'next/server'
+
 export function middleware(req){
     const {pathname} = req.nextUrl;
 
@@ -6,7 +8,11 @@ export function middleware(req){
     }
 
     if (pathname.startsWith("/admin")) {
-        console.log("Middleware applied to /admin path");
+        return NextResponse.rewrite(new URL('/forbidden', req.url))
+    }
+
+    if (pathname.startsWith("/superSecret")) {
+        return NextResponse.redirect(new URL('/forbidden', req.url))
     }
 
     // console.log("Middleware called" , pathName);
