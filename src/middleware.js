@@ -10,11 +10,11 @@ export function middleware(req){
         console.log("Middleware applied to /articles path");
     }
 
-    if (pathname.startsWith("/admin")) {
+    if (pathname.startsWith("/admin") && !cookies?.value) {
         return NextResponse.rewrite(new URL('/forbidden', req.url))
     }
 
-    if (pathname.startsWith("/superSecret")) {
+    if (pathname.startsWith("/superSecret") && !cookies?.value) {
         return NextResponse.redirect(new URL('/forbidden', req.url))
     }
 
