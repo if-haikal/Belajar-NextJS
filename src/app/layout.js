@@ -133,6 +133,10 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+
+  // Harus coba di production, bukan di development.
+  // throw new Error('Simulated error for testing purposes.');
+  
   return (
     <html lang="en">
 
