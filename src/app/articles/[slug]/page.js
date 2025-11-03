@@ -3,11 +3,19 @@ import { FormComment } from "./formComment";
 import { LikeButton } from "./likeButton";
 import { Comments } from "./comments";
 import { Suspense } from "react";
+import { notFound } from "next/navigation";
 
 // use dynamic metadata when fetch detail products/articles/posts
 export async function generateMetadata( {params} ){
     const { slug } = await params;
     const articles = await getArticles(slug);
+
+    if(!articles){
+        return {
+            title: 'Article Not Found',
+            description: 'The requested article does not exist.'
+        }
+    }
 
     return {
         title: articles.title,
@@ -28,6 +36,10 @@ async function getArticles(slug) {
 export default async function ArticlesPage( {params} ) {
     const { slug } = await params;
     const articles = await getArticles(slug);
+
+    if(!articles){
+        notFound();
+    }
 
     // console.log(articles);
 
