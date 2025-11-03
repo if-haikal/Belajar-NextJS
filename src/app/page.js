@@ -6,6 +6,8 @@ export const metadata = {
 }
 
 export default function Home() {
+  throw new Error('Simulated error for testing purposes.');
+
   return (
     <div>
       <h1 className="text-xl font-bold text-black mx-2">
