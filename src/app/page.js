@@ -5,8 +5,9 @@ export const metadata = {
     description: 'View of a Home Page'
 }
 
-export default function Home() {
-  throw new Error('Simulated error for testing purposes.');
+export default function Home() {  
+  // Root layout / Nested error boundary test
+  // throw new Error('Simulated error for testing purposes.');
 
   return (
     <div>
